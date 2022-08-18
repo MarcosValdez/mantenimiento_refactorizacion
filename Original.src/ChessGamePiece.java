@@ -128,11 +128,6 @@ public abstract class ChessGamePiece{
      *            the number of moves to calculate
      * @return ArrayList<String> the calculated moves.
      */
-
-    private boolean getValidation(int i, int pieceColumn, ChessGameBoard board){
-        return board.getCell( i, pieceColumn ).getPieceOnSquare()== null || isEnemy( board, i, pieceColumn ); 
-    }
-
     protected ArrayList<String> calculateSouthMoves(
         ChessGameBoard board,
         int numMoves ){
@@ -140,12 +135,16 @@ public abstract class ChessGamePiece{
         int count = 0;
         if ( isPieceOnScreen() ){
             for ( int i = pieceRow + 1; i < 8 && count < numMoves; i++ ){
-                if ( !getValidation(i, pieceColumn, board) ){
-                    break;
+                if ( ( board.getCell( i, pieceColumn ).getPieceOnSquare()
+                    == null || isEnemy( board, i, pieceColumn ) ) ){
+                    moves.add( i + "," + pieceColumn );
+                    count++;
+                    if ( isEnemy( board, i, pieceColumn ) ){
+                        break;
+                    }
                 }
-                moves.add( i + "," + pieceColumn );
-                count++;
-                if ( isEnemy( board, i, pieceColumn ) ){
+                else
+                {
                     break;
                 }
             }
