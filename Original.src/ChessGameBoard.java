@@ -195,10 +195,13 @@ public class ChessGameBoard extends JPanel{
                     pieceToAdd = null;
                 }
                 chessCells[i][j] = new BoardSquare( i, j, pieceToAdd );
-
-                colorBackgorund = (( i + j ) % 2 == 0) ? Color.WHITE : Color.BLACK;
-                chessCells[i][j].setBackground(colorBackgorund);
-
+                if ( ( i + j ) % 2 == 0 ){
+                    chessCells[i][j].setBackground( Color.WHITE );
+                }
+                else
+                {
+                    chessCells[i][j].setBackground( Color.BLACK );
+                }
                 chessCells[i][j].addMouseListener( listener );
                 this.add( chessCells[i][j] );
             }
