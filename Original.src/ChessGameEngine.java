@@ -169,7 +169,6 @@ public class ChessGameEngine
         else
         {
             board.resetBoard( false );
-            // System.exit(0);
         }
     }
     /**
