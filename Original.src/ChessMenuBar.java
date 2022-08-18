@@ -22,12 +22,13 @@ public class ChessMenuBar
         String[] menuItemLists =
         { "New game/restart,Exit", "Toggle graveyard,Toggle game log",
           "About" };
+        MenuListener  menuListener = new MenuListener();
         for ( int i = 0; i < menuCategories.length; i++ ){
             JMenu currMenu = new JMenu( menuCategories[i] );
             String[] currMenuItemList = menuItemLists[i].split( "," );
             for ( int j = 0; j < currMenuItemList.length; j++ ){
                 JMenuItem currItem = new JMenuItem( currMenuItemList[j] );
-                currItem.addActionListener(new MenuListener() );
+                currItem.addActionListener(menuListener);
                 currMenu.add( currItem );
             }
             this.add( currMenu );
