@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 projectKey=Refactor_Sebastian
 serverUrl=http://localhost:9000
 serverVersion=9.6.0.59041
 dashboardUrl=http://localhost:9000/dashboard?id=Refactor_Sebastian
 ceTaskId=AYKt388atdtto9x1YtW5
 ceTaskUrl=http://localhost:9000/api/ce/task?id=AYKt388atdtto9x1YtW5
+=======
+projectKey=prueva_java
+serverUrl=http://localhost:9000
+serverVersion=8.9.9.56886
+dashboardUrl=http://localhost:9000/dashboard?id=prueva_java
+ceTaskId=AYKyfdP-ozycZ3R6de9C
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYKyfdP-ozycZ3R6de9C
+>>>>>>> origin/gutierrez_albujar
