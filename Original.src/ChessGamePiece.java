@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 // -------------------------------------------------------------------------
 /**
@@ -396,14 +397,13 @@ public abstract class ChessGamePiece{
      *            the column to check
      * @return boolean true if the location is valid, false if not
      */
-    public boolean isOnScreen( int row, int col ){
-        if ( row >= 0 && row <= 7 && col >= 0 && col <= 7 ){
-            return true;
+
+    public boolean isOnScreen( int row, int col){
+        boolean variable = false;
+        if( row >=0 && row <=7 && col>=0 && col <=7){
+            variable = true;
         }
-        else
-        {
-            return false;
-        }
+        return variable;
     }
     // ----------------------------------------------------------
     /**
@@ -635,24 +635,19 @@ public abstract class ChessGamePiece{
             || enemyPiece.getColorOfPiece() == ChessGamePiece.UNASSIGNED ){
             return false;
         }
+        boolean variable = false;
         if ( this.getColorOfPiece() == ChessGamePiece.WHITE ){
             if ( enemyPiece.getColorOfPiece() == ChessGamePiece.BLACK ){
-                return true;
+                variable= true;
             }
-            else
-            {
-                return false;
+                return variable;
             }
-        }
         else
         {
             if ( enemyPiece.getColorOfPiece() == ChessGamePiece.WHITE ){
-                return true;
+                variable=  true;
             }
-            else
-            {
-                return false;
-            }
+                return variable;
         }
     }
     // ----------------------------------------------------------
@@ -662,8 +657,8 @@ public abstract class ChessGamePiece{
      * @param board the game board to check on
      * @return ArrayList<GamePiece> the list of attackers
      */
-    public ArrayList<ChessGamePiece> getCurrentAttackers( ChessGameBoard board ){
-        ArrayList<ChessGamePiece> attackers = new ArrayList<ChessGamePiece>();
+    public List<ChessGamePiece> getCurrentAttackers(ChessGameBoard board ){
+        ArrayList<ChessGamePiece> attackers = new ArrayList<>();
         int enemyColor =
             ( this.getColorOfPiece() == ChessGamePiece.BLACK )
                 ? ChessGamePiece.WHITE
