@@ -1,6 +1,5 @@
 import javax.swing.ImageIcon;
 import java.util.ArrayList;
-// import java.awt.Color;
 // -------------------------------------------------------------------------
 /**
  * Represents a Queen game piece.
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  * @version 2010.11.17
  */
 public class Queen
-    extends ChessGamePiece{
+        extends ChessGamePiece{
     // ----------------------------------------------------------
     /**
      * Create a new Queen object.
@@ -43,7 +42,7 @@ public class Queen
         ArrayList<String> southMoves = calculateSouthMoves( board, 8 );
         ArrayList<String> eastMoves = calculateEastMoves( board, 8 );
         ArrayList<String> westMoves = calculateWestMoves( board, 8 );
-        ArrayList<String> allMoves = new ArrayList<String>();
+        ArrayList<String> allMoves = new ArrayList<>();
         allMoves.addAll( northEastMoves );
         allMoves.addAll( northWestMoves );
         allMoves.addAll( southWestMoves );
@@ -54,6 +53,7 @@ public class Queen
         allMoves.addAll( eastMoves );
         return allMoves;
     }
+
     /**
      * Creates an icon for this piece depending on the piece's color.
      *
@@ -63,19 +63,19 @@ public class Queen
     public ImageIcon createImageByPieceType(){
         if ( getColorOfPiece() == ChessGamePiece.WHITE ){
             return new ImageIcon(
-                getClass().getResource("chessImages/WhiteQueen.gif")
-            );            
+                    getClass().getResource("chessImages/WhiteQueen.gif")
+            );
         }
         else if ( getColorOfPiece() == ChessGamePiece.BLACK ){
             return new ImageIcon(
-                getClass().getResource("chessImages/BlackQueen.gif")
-            );            
+                    getClass().getResource("chessImages/BlackQueen.gif")
+            );
         }
         else
         {
             return new ImageIcon(
-                getClass().getResource("chessImages/default-Unassigned.gif")
-            ); 
+                    getClass().getResource("chessImages/default-Unassigned.gif")
+            );
         }
     }
 }
