@@ -16,7 +16,7 @@ import java.awt.GridLayout;
  */
 public class ChessGameBoard extends JPanel{
     private BoardSquare[][] chessCells;
-    private BoardListener   listener;
+    private BoardListener listener;
     // ----------------------------------------------------------
     /**
      * Returns the entire board.
@@ -74,7 +74,7 @@ public class ChessGameBoard extends JPanel{
      * @return ArrayList<GamePiece> the pieces
      */
     public ArrayList<ChessGamePiece> getAllWhitePieces(){
-        ArrayList<ChessGamePiece> whitePieces = new ArrayList<ChessGamePiece>();
+        ArrayList<ChessGamePiece> whitePieces = new ArrayList<>();
         for ( int i = 0; i < 8; i++ ){
             for ( int j = 0; j < 8; j++ ){
                 if ( chessCells[i][j].getPieceOnSquare() != null
@@ -93,7 +93,7 @@ public class ChessGameBoard extends JPanel{
      * @return ArrayList<GamePiece> the pieces
      */
     public ArrayList<ChessGamePiece> getAllBlackPieces(){
-        ArrayList<ChessGamePiece> blackPieces = new ArrayList<ChessGamePiece>();
+        ArrayList<ChessGamePiece> blackPieces = new ArrayList<>();
         for ( int i = 0; i < 8; i++ ){
             for ( int j = 0; j < 8; j++ ){
                 if ( chessCells[i][j].getPieceOnSquare() != null
@@ -157,6 +157,7 @@ public class ChessGameBoard extends JPanel{
      */
     public void initializeBoard(){
         resetBoard( false );
+        Color colorBackgorund;
         for ( int i = 0; i < chessCells.length; i++ ){
             for ( int j = 0; j < chessCells[0].length; j++ ){
                 ChessGamePiece pieceToAdd;
